@@ -1,0 +1,293 @@
+/* Reset */
+@charset "utf-8"; 
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{background: none repeat scroll 0 0 transparent;border: 0 none;font-size: 100%;outline: 0 none;vertical-align: baseline;margin: 0;padding: 0;}table{border-collapse:collapse;border-spacing:0;}address,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,nav,menu,nav,section,summary{display:block;}  a, a:hover,button,button:hover, .anime, .small_btn, .btn:hover .small_btn   {-moz-transition:all 200ms linear;-ms-transition:all 200ms linear;-o-transition:all 200ms linear;-webkit-transition:all 200ms linear;transition:all 200ms linear;}  button{cursor:pointer;}  *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;} 
+*/ a,
+a:hover,
+button,
+button:hover,
+.anime {
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+li {
+    list-style: none;
+}
+/* Reset_end*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+/*Flex Framework_начало*/
+
+.main_flex {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.main_flex__nowrap {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+
+.main_flex_column {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.main_flex_column_nw {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+
+.flex__auto {
+  flex: auto;
+  -webkit-flex: auto;
+  -ms-flex: auto;
+}
+
+.flex__jcontent_between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+.flex__jcontent_start {
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+
+.flex__jcontent_end {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+.flex__jcontent_center {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.flex__jcontent_around {
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+
+.flex__align-items_start {
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+
+.flex__align-items_end {
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+
+.flex__align-items_baseline {
+  align-items: baseline;
+  -webkit-align-items: baseline;
+}
+
+.flex__align-items_stretch {
+  align-items: stretch;
+  -webkit-align-items: stretch;
+}
+
+.flex__align-items_center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.flex__align-content_flex-start {
+  align-content: flex-start;
+  -webkit-align-content: flex-start;
+}
+
+.flex__align-content_flex-end {
+  align-content: flex-end;
+  -webkit-align-content: flex-end;
+}
+
+.flex__align-content_space-between {
+  align-content: space-between;
+  -webkit-align-content: space-between;
+}
+
+.flex__align-content_center {
+  align-content: center;
+  -webkit-align-content: center;
+}
+
+.flex__align-content_space-around {
+  align-content: space-around;
+  -webkit-align-content: space-around;
+}
+
+.flex__align-content_stretch {
+  align-content: stretch;
+  -webkit-align-content: stretch;
+}
+
+.flex__flex-grow_01 {
+  flex-grow: 1;
+  -webkit-flex-grow: 1;
+}
+
+.flex__flex-grow_02 {
+  flex-grow: 2;
+  -webkit-flex-grow: 2;
+}
+
+.flex__flex-grow_03 {
+  flex-grow: 3;
+  -webkit-flex-grow: 3;
+}
+
+.flex__flex-grow_04 {
+  flex-grow: 4;
+  -webkit-flex-grow: 4;
+}
+
+/*Flex Framework_конец*/
+
+/* Начало общих стилей */
+body {
+    font-family: 'Roboto';
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 100vh;
+    width: 15.62vw;
+    background-color: #242b2e;
+    color: #6b7072;
+    box-shadow: 0 0 17px 10px #665c5c;
+}
+#logo {
+    width: 100%;
+    height: 11.57vh;
+    background-color: #fff;
+}
+#logo img {
+    width: 6vw;
+    margin: auto;
+}
+.main_nav a {
+    height: 3.22vmax;
+    width: 100%;
+    padding-right: 1.3vmax;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 0.93vmax;
+    line-height: 1.66vmax;
+    background-color: #2f373b;
+    background-image: linear-gradient(0.0deg, rgba(0,0,0,0.01) 0%, rgba(255,255,255,0.01) 100%);
+}
+.main_nav a:hover {
+    background-color: #1ab5b3;
+    background-image: linear-gradient(0.0deg, rgba(0,0,0,0.09) 0%, rgba(255,255,255,0.09) 100%);
+}
+#title_filter {
+    padding: 1.25vmax;
+    font-size: 0.99vmax;
+    line-height: 1.66vmax;
+    font-weight: 100;
+    color: #1ab5b3;
+}
+#title_filter img {
+    height: 0.9vmax;
+    width: 0.9vmax;
+    margin-left: 0.62vmax;
+}
+#filter li {
+    width: 100%;
+    text-align: right;
+}
+#filter ul a {
+    font-size: 0.67vmax;
+    line-height: 1.25vmax;
+    font-weight: 300;
+    text-align: right;
+    color: #6b7072;
+    padding: 0.41vmax 1.25vmax;
+}
+#filter a:hover {
+    color: #ffffff;
+}
+#soc_bar img {
+  width: 1.25vmax;
+  height: 1.25vmax;
+}
+#soc_bar a {
+  margin-left: 0.52vmax;
+}
+#soc_bar a:hover {
+  transform: scale(0.9);
+}
+#soc_bar {
+  padding: 1.25vmax;
+  border-top: 1px solid #1e282b;
+  width: 100%;
+  margin-top: 1.25vmax;
+}
+#cop {
+  width: 100%;
+  text-align: right;
+  font-size: 0.62vmax;
+  line-height: 1.3vmax;
+  font-weight: 100;
+  color: #6b7072;
+  padding-right: 1.25vmax;
+}
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 15.62vw;
+}
+.work_box {
+  height: 16.19vw;
+  max-width: 21.09vw;
+  width: 25%;
+  position: relative;
+  overflow: hidden;
+}
+.work_box img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+}
+.work_box a {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(45, 184, 185, 0.9);
+  color: #fff;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.arrow {
+
+}
