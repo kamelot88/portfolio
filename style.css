@@ -164,6 +164,7 @@ li {
 /* Начало общих стилей */
 body {
     font-family: 'Roboto';
+    background-color: #6b7072;
 }
 header {
     position: fixed;
@@ -174,7 +175,7 @@ header {
     width: 15.62vw;
     background-color: #242b2e;
     color: #6b7072;
-    box-shadow: 0 0 17px 10px #665c5c;
+    box-shadow: 0 0 17px 10px rgba(70, 70, 70, 0.55);
 }
 #logo {
     width: 100%;
@@ -200,10 +201,10 @@ header {
     background-color: #2f373b;
     background-image: linear-gradient(0.0deg, rgba(0,0,0,0.01) 0%, rgba(255,255,255,0.01) 100%);
 }
-.main_nav a:hover {
+/* .main_nav a:hover {
     background-color: #1ab5b3;
     background-image: linear-gradient(0.0deg, rgba(0,0,0,0.09) 0%, rgba(255,255,255,0.09) 100%);
-}
+} */
 #title_filter {
     padding: 1.25vmax;
     font-size: 0.99vmax;
@@ -269,7 +270,7 @@ main {
   overflow: hidden;
 }
 .work_box img {
-  width: 100%;
+  width: calc(100% + 5vw);
   height: auto;
   position: absolute;
   z-index: 1;
@@ -287,7 +288,191 @@ main {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+}
+.work_box a:hover {
+  opacity: 1;
 }
 .arrow {
-
+  width: 3vw;
+  height: 3vw;
+  fill: #fff;
+}
+.work_box h2 {
+  font-size: 1.25vw;
+  font-weight: 400;
+  margin-bottom: 0.78vw;
+}
+.work_box h3 {
+  font-size: 0.62vw;
+  font-weight: 400;
+}
+.work_box h3:after {
+  content: '';
+  width: 50%;
+  height: 1px;
+  margin: 1vw auto;
+  display: block;
+  background-color: #fff;
+}
+#info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  width: 4.68vw;
+  height: 4.68vw;
+  background-color: rgba(45, 184, 185, 0.9);
+  /* fill: #fff; */
+  padding: 1.2vw;
+  cursor: pointer;
+}
+.main_nav .active {
+  background-color: #1ab5b3;
+    background-image: linear-gradient(0.0deg, rgba(0,0,0,0.09) 0%, rgba(255,255,255,0.09) 100%);
+}
+#info_box svg {
+  height: .88vw;
+  fill: #fff;
+  margin-right: .52vw;
+}
+#info_box {
+  position: fixed;
+  right: 0;
+  top: 4.68vw;
+  z-index: 5;
+  background-color: rgba(0,0,0,0.75);
+  padding: 1vw 3.85vw 1vw 1vw;
+  color: #fff;
+  transform: translateX(100%);
+  transition: all .35s;
+}
+#info_box.open {
+  transform: translateX(0%);
+  transition: all .35s;
+}
+#info_box li {
+  font-size: .83vmax;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: .78vmax;
+  margin-bottom: 1vw;
+}
+#info_box li a {
+  color: #fff;
+}
+#info_box li:last-child {
+  margin-bottom: 0;
+}
+.wrap {
+  margin: 1.26vw;
+  padding: 1.26vw;
+}
+.white {
+  background-color: #fff;
+}
+.info_work_box {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.info_work_box .left_info,
+.info_work_box .right_info {
+  width: 48%;
+}
+.info_work_box .left_info .img_box_work {
+  width: 100%;
+  overflow: hidden;
+  height: 29.16vw;
+}
+.info_work_box .left_info .img_box_work img {
+  width: 100%;
+  height: auto;
+}
+.info_work_box .left_info .about_work {
+  margin-top: 1.3vw;
+  padding-bottom: 1.6vw;
+  border-bottom: 1px solid;
+  color: #a3a3a3;
+  font-size: .93vw;
+  line-height: 1.56vw;
+}
+.info_work_box .left_info .about_work h1, .title_info {
+  color: #000000;
+  font-size: 1.25vw;
+  line-height: 1.35vw;
+  font-weight: 400;
+  margin-bottom: 1vw;
+}
+.info_work_box .left_info .about_work p {
+  margin-bottom: 2.39vw;
+}
+.info_work_box .left_info .about_work p:last-child {
+  margin-bottom: 0;
+}
+.pr_rel {
+  margin-top: 1.3vw;
+}
+.rel_images div {
+  width: 12.5vw;
+  height: 9.48vw;
+}
+.rel_images div img {
+  width: 100%;
+  height: 100%;
+}
+.right_info .pr_info ul li {
+  font-size: .8vw;
+  line-height: 1.56vw;
+  color: #848484;
+  padding: .72vw 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.right_info .pr_info ul li img {
+  height: 1.56vw;
+  margin-right: .67vw;
+}
+.right_info .tags, .right_info .pr_gal, .right_info .pr_feat {
+  margin-top: 1.56vw;
+}
+.tags .list_tags .tag {
+  font-size: .67vw;
+  /* line-height: 1.66vw; */
+  font-weight: 300;
+  color: #a3a3a3;
+  padding: .67vw;
+  margin-right: .55vw;
+  border: 1.0px solid #dbdbdb;
+  border-radius: 15px;
+}
+.right_info .pr_gal .pr_gal_images div {
+  height: 4.06vw;
+  width: 4.06vw;
+  background-color: #dbdbdb;
+  margin-right: 0.67vw;
+  margin-bottom: 0.67vw;
+  overflow: hidden;
+}
+.pr_gal_images div img {
+  width: auto;
+  height: 100%;
+}
+.pr_feat ul li {
+  list-style-image: url(img/checkmark-round_icon-icons.com_50430.png);
+  margin-bottom: .52vw;
+  font-size: .72vw;
+  font-weight: 400;
+  color: #848484;
+}
+.pr_feat ul {
+  margin-left: 1.4vw;
+}
+.line_info {
+  position: absolute;
+  left: 50%;
+  height: calc(100% + 1.26vw);
+  width: 1px;
+  background-color: #e5e5e5;
 }
