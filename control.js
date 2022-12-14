@@ -94,17 +94,6 @@ const skillProgres4 = document.querySelector("#about > div > .right-block > div:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //! Бургер меню
 var burgerLine = document.getElementsByClassName('burger-line');
 var blackFill = document.querySelector('.black-fill');
@@ -130,7 +119,7 @@ btnBurger.onclick = function() {
             elem.style.boxShadow = "0px 0px 1px 1px white";
         }
     } else {
-        mainMenu.style.right = -60 + "vw";
+        mainMenu.style.right = -100 + "vw";
         blackFill.style.width = 0 + "vw";
         blackFill.style.height = 0 + "%";
         lineBurger2.classList.remove('opacity');
@@ -144,7 +133,7 @@ btnBurger.onclick = function() {
 };
 
 blackFill.onclick = function() {
-    mainMenu.style.right = -60 + "vw";
+    mainMenu.style.right = -100 + "vw";
     blackFill.style.width = 0 + "vw";
     blackFill.style.height = 0 + "%";
     lineBurger2.classList.remove('opacity');
@@ -158,7 +147,7 @@ blackFill.onclick = function() {
 const collectionNavMenu = document.querySelectorAll('.main-menu > ul > li');
 for (let elem of collectionNavMenu) {
     elem.onclick = function() {
-        mainMenu.style.right = -60 + "vw";
+        mainMenu.style.right = -100 + "vw";
         blackFill.style.width = 0 + "vw";
         blackFill.style.height = 0 + "%";
         lineBurger2.classList.remove('opacity');
@@ -258,3 +247,107 @@ const btnCV = document.querySelector("#btn-header");
 btnCV.onclick = function() {
     document.location.href = "https://kamelot88.github.io/rsschool-cv/cv";
 };
+
+//! Languan-menu
+
+var clickLang = document.querySelector(".lang-menu");
+var languanMenu = document.querySelector('.nav-lang-menu');
+var languanMenu = document.querySelector('.nav-lang-menu');
+
+clickLang.onclick = function() {
+        languanMenu.classList.toggle('display-opaciti');
+}
+
+var collectionLang = document.querySelectorAll('.nav-lang-menu > ul > li');
+
+for (let elem of collectionLang) {
+    elem.onclick = function() {
+        languanMenu.classList.toggle('display-opaciti');
+    }
+}
+
+// implementation of the language switch.
+
+var languageUk = document.getElementsByClassName('uk');;
+var languagePl = document.getElementsByClassName('pl');
+var languageEn = document.getElementsByClassName('en');
+var languageRu = document.getElementsByClassName('ru');
+
+var flagUa = document.querySelector('.flag-ua');
+var flagPl = document.querySelector('.flag-pl');
+var flagEn = document.querySelector('.flag-en');
+var flagRu = document.querySelector('.flag-ru');
+
+for (let elem of languagePl) {
+    elem.classList.add('display-none');
+}
+for (let elem of languageEn) {
+    elem.classList.add('display-none');
+}
+for (let elem of languageRu) {
+    elem.classList.add('display-none');
+}
+
+flagUa.onclick = function() {
+    for (let elem of languageUk) {
+        elem.classList.remove('display-none');
+    }
+    for (let elem of languagePl) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languageEn) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languageRu) {
+        elem.classList.add('display-none');
+    }
+}
+flagPl.onclick = function() {
+    for (let elem of languageUk) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languagePl) {
+        elem.classList.remove('display-none');
+    }
+    for (let elem of languageEn) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languageRu) {
+        elem.classList.add('display-none');
+    }
+}
+flagEn.onclick = function() {
+    for (let elem of languageUk) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languagePl) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languageEn) {
+        elem.classList.remove('display-none');
+    }
+    for (let elem of languageRu) {
+        elem.classList.add('display-none');
+    }
+}
+flagRu.onclick = function() {
+    for (let elem of languageUk) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languagePl) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languageEn) {
+        elem.classList.add('display-none');
+    }
+    for (let elem of languageRu) {
+        elem.classList.remove('display-none');
+    }
+}
+
+// for (let elem of collectionImgContakt) {
+//     elem.onmouseover = function() {
+//         elem.firstElementChild.firstElementChild.classList.toggle('hover-turn-effekt');
+//         // languanMenu.classList.toggle('hover-turn-effekt');
+//     }
+// }
