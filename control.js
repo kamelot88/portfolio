@@ -119,7 +119,7 @@ btnBurger.onclick = function() {
             elem.style.boxShadow = "0px 0px 1px 1px white";
         }
     } else {
-        mainMenu.style.right = -100 + "vw";
+        mainMenu.style.right = -70 + "vw";
         blackFill.style.width = 0 + "vw";
         blackFill.style.height = 0 + "%";
         lineBurger2.classList.remove('opacity');
@@ -133,7 +133,7 @@ btnBurger.onclick = function() {
 };
 
 blackFill.onclick = function() {
-    mainMenu.style.right = -100 + "vw";
+    mainMenu.style.right = -70 + "vw";
     blackFill.style.width = 0 + "vw";
     blackFill.style.height = 0 + "%";
     lineBurger2.classList.remove('opacity');
@@ -147,7 +147,7 @@ blackFill.onclick = function() {
 const collectionNavMenu = document.querySelectorAll('.main-menu > ul > li');
 for (let elem of collectionNavMenu) {
     elem.onclick = function() {
-        mainMenu.style.right = -100 + "vw";
+        mainMenu.style.right = -70 + "vw";
         blackFill.style.width = 0 + "vw";
         blackFill.style.height = 0 + "%";
         lineBurger2.classList.remove('opacity');
