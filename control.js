@@ -60,6 +60,12 @@ window.onscroll = function() {
 };
 
 //! Функция анимиривания увеличения числа
+const skillProgres1 = document.querySelector("#about > div > .right-block > div:nth-child(1) > div.title-skill > span");
+const skillProgres2 = document.querySelector("#about > div > .right-block > div:nth-child(2) > div.title-skill > span");
+const skillProgres3 = document.querySelector("#about > div > .right-block > div:nth-child(3) > div.title-skill > span");
+const skillProgres4 = document.querySelector("#about > div > .right-block > div:nth-child(4) > div.title-skill > span");
+const skillProgres5 = document.querySelector("#about > div > .right-block > div:nth-child(5) > div.title-skill > span");
+
 const time = 4000; // ms
 const step = 1;
 
@@ -75,20 +81,13 @@ function myProgres(num) {
         skillProgres2.innerHTML = n;
         skillProgres3.innerHTML = n;
         skillProgres4.innerHTML = n;
+        skillProgres5.innerHTML = n;
     },
         t);
 }
 // function myProgresTop() {
 //     skillProgres1.textContent = points[j]; //This prints the values that you stored in the array
 //         }
-// }
-
-
-
-const skillProgres1 = document.querySelector("#about > div > .right-block > div:nth-child(1) > div.title-skill > span");
-const skillProgres2 = document.querySelector("#about > div > .right-block > div:nth-child(2) > div.title-skill > span");
-const skillProgres3 = document.querySelector("#about > div > .right-block > div:nth-child(3) > div.title-skill > span");
-const skillProgres4 = document.querySelector("#about > div > .right-block > div:nth-child(4) > div.title-skill > span");
 
 
 
@@ -254,17 +253,31 @@ var clickLang = document.querySelector(".lang-menu");
 var languanMenu = document.querySelector('.nav-lang-menu');
 var languanMenu = document.querySelector('.nav-lang-menu');
 
-clickLang.onclick = function() {
-        languanMenu.classList.toggle('display-opaciti');
-}
+// clickLang.onclick = function() {
+//         languanMenu.classList.toggle('display-opaciti');
+// }
 
-var collectionLang = document.querySelectorAll('.nav-lang-menu > ul > li');
+// var collectionLang = document.querySelectorAll('.nav-lang-menu > ul > li');
 
+// for (let elem of collectionLang) {
+//     elem.onclick = function() {
+//         languanMenu.classList.toggle('display-opaciti');
+//     }
+// }
+
+function showBlock() {
+    languanMenu.classList.toggle('b-show');
+  }
+  clickLang.addEventListener('click', showBlock);
+
+  var collectionLang = document.querySelectorAll('.nav-lang-menu > ul > li');
+  
 for (let elem of collectionLang) {
     elem.onclick = function() {
-        languanMenu.classList.toggle('display-opaciti');
+        languanMenu.classList.toggle('b-show');
     }
 }
+// 
 
 // implementation of the language switch.
 

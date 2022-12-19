@@ -50,7 +50,6 @@ header {
     margin-top: 8px;
     margin-left: -4.5vw;
     transition: all ease .7s;
-    opacity: 1;
     cursor: pointer;
 }
 .nav-lang-menu ul li img:hover, .social a img:hover {
@@ -61,11 +60,21 @@ header {
     -ms-transform: scale(1.2,1.2);
     transform: scale(1.2,1.2);
 }
-.display-opaciti {
-    transition: all ease .7s;
-    opacity: 0;
-    cursor: default;
+.nav-lang-menu {
+    display: none;
 }
+.b-show {
+    display: block;
+    animation: showBlock 1s linear forwards;
+  }
+@keyframes showBlock {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 .burger {
     display: none;
 }
@@ -207,16 +216,17 @@ h1 {
     padding-top: 40px;
 }
 .left-block {
-    width: 21.88vw;
+    width: 21vw;
+    align-self: flex-start;
 }
 .right-block {
-    width: 20.63vw;
+    width: 16vw;
 }
 .title-first-left-block {
     color: #15263e;
     text-align: right;
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: 2.7px;
     margin-bottom: 23px;
@@ -238,11 +248,42 @@ h1 {
     letter-spacing: 1.13px;
     margin-bottom: 10px;
 }
+.center-photo {
+    width: 15vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .center-photo > img {
-    width: 20vw;
+    width: 90%;
+}
+.center-photo-text {
+    font-family: "Karton";
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    color: #494949; 
+}
+.wrap-text {
+width: 100%;
+height: auto;
+margin-bottom: 25px;
+padding: 10px 0 10px 0;
+border: #ff0072 3px solid;
+border-radius: 40px;
+}
+.title-right-block img  {
+    width: 12vw;
+    margin: 0 auto;
+    margin-bottom: 2vh;
 }
 .skill {
     margin-bottom: 40px;
+}
+.right-block-wrap {
+    padding: 35px 0 35px 0;
 }
 .title-skill {
     text-align: center;
@@ -268,7 +309,7 @@ h1 {
 
 /*! Стили блока Contakt */
 #contakt {
-    padding: 100px 0 90px 0;
+    padding: 70px 0 70px 0;
     background-color: #dcdcde;
 }
 #contakt > .wrap {
@@ -478,7 +519,7 @@ h1 {
 
 /*! Стили блока Portfolio */
 #portfolio {
-    padding: 10px 0 135px 0;
+    padding: 10px 0 75px 0;
 }
 .title-main-portfolio {
     color: #15263e;
@@ -523,7 +564,7 @@ h1 {
 
 /*! Стили блока Experience */
 
-#experience {
+/* #experience {
     background-color: #e7e7e7;
     background-image: linear-gradient(41deg, #a21af0 0%, #ff0072 100%);
     padding: 80px 0 30px 0;
@@ -591,7 +632,7 @@ h1 {
 }
 .block-experience:nth-child(2n) {
     flex-direction: row-reverse;
-}
+} */
 
 
 /*! Стили блока Blog */
@@ -648,7 +689,7 @@ h1 {
 
 /*! Стили блока Contact-US */
 
-/* #contact-US {
+#contact-US {
     padding: 70px 0 65px 0;
     background-color: #232d50;
     background-image: url(../assets/Layer_9.png);
@@ -709,7 +750,7 @@ textarea {
     background-color: #ffffff;
     background-image: linear-gradient(41deg, #a21af0 0%, #ff0072 100%);
     padding: 26px 35px;
-} */
+}
 
 /*! Стили блока Footer */
 
@@ -1093,11 +1134,15 @@ header, main, footer, .top-header {
         font-size: 2.5vw;
     }
     #about > .wrap {
-        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .right-block {
+        width: 70%;
+        margin: 0 auto;
+        padding-top: 30px;
     }
     .left-block {
-        width: 75vw;
-        margin-bottom: 4vh;
+        width: 45vw;
     }
     .title-first-left-block {
         text-align: left;
@@ -1106,11 +1151,15 @@ header, main, footer, .top-header {
         text-align: left;
     }
     .text-content-left-block {
-        text-align: left;
+        text-align: right;
+        line-height: 25px;
+        font-size: 14px;
+    }
+    .center-photo {
+        width: 37vw;
     }
     .center-photo > img {
-        width: 50vw;
-        margin-bottom: 4vh;
+        width: 100%;
     }
     .skill > img {
         width: 50vw;
@@ -1119,7 +1168,9 @@ header, main, footer, .top-header {
         font-size: 8.5vw;
         letter-spacing: 17px;
     }
-    
+    .skill {
+        margin-bottom: 30px;
+    }
     .top-header .main-menu {
         margin-left: 0;
     }
@@ -1199,6 +1250,8 @@ header, main, footer, .top-header {
     .nav-lang-menu {
         position: static;
         width: 40vw;
+        display: block;
+        margin-left: 0;
     }
     .nav-lang-menu img {
         width: 7vw;
@@ -1283,10 +1336,11 @@ header, main, footer, .top-header {
         text-align: center;
     }
     .title-second-left-block {
-        text-align: center;
+        text-align: right;
+        margin-bottom: 20px;
     }
     .text-content-left-block {
-        text-align: center;
+        text-align: right;
     }
     .img-contakt {
         margin-right: 20px;
@@ -1343,7 +1397,7 @@ header, main, footer, .top-header {
         margin-bottom: 5vh;
     }
     #portfolio {
-        padding: 90px 0 60px 0;
+        padding: 60px 0 60px 0;
     }
     .rectagl {
         width: 5px;
@@ -1364,6 +1418,12 @@ header, main, footer, .top-header {
     }
     .logo-foot > img {
         width: 12vw;
+    }
+    .content-footer {
+        font-size: 14px;
+    }
+    .social img {
+        width: 6vw;
     } 
 }
 @media only screen and (max-width: 379px){
