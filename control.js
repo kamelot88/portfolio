@@ -60,11 +60,11 @@ window.onscroll = function() {
 };
 
 //! Функция анимиривания увеличения числа
-const skillProgres1 = document.querySelector("#about > div > .right-block > div:nth-child(1) > div.title-skill > span");
-const skillProgres2 = document.querySelector("#about > div > .right-block > div:nth-child(2) > div.title-skill > span");
-const skillProgres3 = document.querySelector("#about > div > .right-block > div:nth-child(3) > div.title-skill > span");
-const skillProgres4 = document.querySelector("#about > div > .right-block > div:nth-child(4) > div.title-skill > span");
-const skillProgres5 = document.querySelector("#about > div > .right-block > div:nth-child(5) > div.title-skill > span");
+const skillProgres1 = document.querySelector(".right-block > div:nth-child(1) > div.title-skill > span");
+const skillProgres2 = document.querySelector(".right-block > div:nth-child(2) > div.title-skill > span");
+const skillProgres3 = document.querySelector(".right-block > div:nth-child(3) > div.title-skill > span");
+const skillProgres4 = document.querySelector(".right-block > div:nth-child(4) > div.title-skill > span");
+const skillProgres5 = document.querySelector(".right-block > div:nth-child(5) > div.title-skill > span");
 
 const time = 4000; // ms
 const step = 1;

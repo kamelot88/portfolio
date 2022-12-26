@@ -509,16 +509,25 @@
         <section id="contact-US">
             <div class="wrap">
                 <div class="form main_flex_column flex__align-content_center">
-                    <h2 class="title-main-form">Contact us</h2>
-                    <h4 class="title-form">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                    <h2 class="title-main-form uk" lang="uk">Написати мені</h2>
+                    <h2 class="title-main-form pl" lang="pl">Napisz do mnie</h2>
+                    <h2 class="title-main-form en" lang="en">Write to me</h2>
+                    <h2 class="title-main-form ru" lang="ru">Написать мне</h2>
+                    <h4 class="title-form">Відправ мені повідомлення через форму та залиш свій телефон або адресу ел. пошти для отримання відповіді.</h4>
                     <form action="send.php" method="post" class="message-form main_flex_column flex__align-items_center">
                         <div class="user-id main_flex flex__jcontent_between">
-                            <input type="text" name="name" placeholder="Name (Required)" required="">
-                            <input type="tel" id="phone" name="phone" required="">
-                            <input type="email" name="email" placeholder="Email (Required)" required="">
+                            <input type="text" name="name" placeholder="Ім'я (Обов'язково)" required="" class="uk" lang="uk">
+                            <input type="text" name="name" placeholder="Imię (Wymagane)" required="" class="pl" lang="pl">
+                            <input type="text" name="name" placeholder="Name (Required)" required="" class="en" lang="en">
+                            <input type="text" name="name" placeholder="Имя (Обязательно)" required="" class="ru" lang="ru">
+                            <input type="tel" id="phone" name="phone" required="" placeholder="Phone">
+                            <input type="email" name="email" placeholder="Email" required="">
                         </div>
             
-                        <textarea placeholder="Describe your project in detail..." class="description-form"></textarea>
+                        <textarea placeholder="Детально напиши своє запитання..." class="description-form uk" lang="uk"></textarea>
+                        <textarea placeholder="Napisz szczegółowo swoje pytanie..." class="description-form pl" lang="pl"></textarea>
+                        <textarea placeholder="Write your question in detail..." class="description-form en" lang="en"></textarea>
+                        <textarea placeholder="Подробно напиши свой вопрос..." class="description-form ru" lang="ru"></textarea>
             
                         <button type="submit" name="send" class="main_flex flex__jcontent_center flex__align-items_center flex__align-content_center">
                             Send Message

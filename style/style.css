@@ -216,11 +216,11 @@ h1 {
     padding-top: 40px;
 }
 .left-block {
-    width: 21vw;
+    width: 19vw;
     align-self: flex-start;
 }
 .right-block {
-    width: 16vw;
+    width: 20vw;
 }
 .title-first-left-block {
     color: #15263e;
@@ -242,7 +242,7 @@ h1 {
 }
 .text-content-left-block {
     color: #494949;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 30px;
     text-align: right;
     letter-spacing: 1.13px;
@@ -254,6 +254,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-self: flex-start;
 }
 .center-photo > img {
     width: 90%;
@@ -275,15 +276,24 @@ border: #ff0072 3px solid;
 border-radius: 40px;
 }
 .title-right-block img  {
-    width: 12vw;
+    width: 3vw;
     margin: 0 auto;
     margin-bottom: 2vh;
 }
+.title-right-block > h3 {
+    margin-bottom: 10px;
+    color: #4d4d4d;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
 .skill {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 .right-block-wrap {
-    padding: 35px 0 35px 0;
+    width: 20vw;
+    align-self: flex-start;
 }
 .title-skill {
     text-align: center;
@@ -701,11 +711,11 @@ border-radius: 40px;
 .form {
     width: 100%;
     background-color: #15263e;
-    padding: 80px 0 95px 0;
+    padding: 70px 0 95px 0;
 }
 .title-main-form {
     color: #ffffff;
-    font-size: 50px;
+    font-size: 32px;
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
@@ -749,7 +759,7 @@ textarea {
     letter-spacing: 1.35px;
     background-color: #ffffff;
     background-image: linear-gradient(41deg, #a21af0 0%, #ff0072 100%);
-    padding: 26px 35px;
+    padding: 20px 20px;
 }
 
 /*! Стили блока Footer */
@@ -1130,6 +1140,9 @@ header, main, footer, .top-header {
     .title-main-header {
         vertical-align:text-top
     }
+    .title-main-services {
+        font-size: 38px;
+    }
     .title-second {
         font-size: 2.5vw;
     }
@@ -1137,9 +1150,9 @@ header, main, footer, .top-header {
         flex-wrap: wrap;
     }
     .right-block {
-        width: 70%;
+        width: 100%;
         margin: 0 auto;
-        padding-top: 30px;
+        padding-top: 20px;
     }
     .left-block {
         width: 45vw;
@@ -1155,11 +1168,29 @@ header, main, footer, .top-header {
         line-height: 25px;
         font-size: 14px;
     }
+    .right-block-wrap {
+        width: 60vw;
+        padding-top: 55px;
+        margin: 0 auto;
+    }
     .center-photo {
         width: 37vw;
     }
     .center-photo > img {
         width: 100%;
+    }
+    .title-right-block img {
+        width: 11vw;
+        margin-bottom: 0;
+    }
+    .title-right-block > h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .center-photo-text {
+        font-size: 16px;
+        font-weight: 700;
     }
     .skill > img {
         width: 50vw;
@@ -1219,6 +1250,24 @@ header, main, footer, .top-header {
     }
     .logo-foot > img {
         width: 10vw;
+    }
+    .user-id > input::placeholder {
+        font-size: 12px;
+    }
+    .user-id > input::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+    .user-id > input::-moz-placeholder {
+        font-size: 12px;
+    }
+    .user-id > input::-o-placeholder {
+        font-size: 12px;
+    }
+    .user-id > input::-khtml-placeholder {
+        font-size: 12px;
+    }
+    .user-id > input::-khtml-placeholder {
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 489px){
