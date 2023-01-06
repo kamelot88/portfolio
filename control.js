@@ -356,11 +356,8 @@ flagRu.onclick = function() {
     for (let elem of languageRu) {
         elem.classList.remove('display-none');
     }
-}
+};
 
-// for (let elem of collectionImgContakt) {
-//     elem.onmouseover = function() {
-//         elem.firstElementChild.firstElementChild.classList.toggle('hover-turn-effekt');
-//         // languanMenu.classList.toggle('hover-turn-effekt');
-//     }
-// }
+
+let dataYers = document.querySelector(".content-footer > span");
+dataYers.textContent = new Date().getFullYear();
