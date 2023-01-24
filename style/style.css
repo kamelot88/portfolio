@@ -63,21 +63,6 @@ header {
 .nav-lang-menu {
     display: none;
 }
-.b-show {
-    display: block;
-    animation: showBlock 1s linear forwards;
-  }
-@keyframes showBlock {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-.burger {
-    display: none;
-}
 .top-header .main-menu {
     width: 100%;
     margin-left: 10%;
@@ -135,6 +120,13 @@ nav > ul > li, nav > ul > li > a {
 nav > ul > li > a >img {
     width: 5vw;
 }
+.burger-line {
+    background-color:seashell;
+    height: 4px;
+    border-radius: 5px;
+    transition: all ease .6s;
+}
+
 .bottom-header {
     padding: 70px 0 107px 0;
     margin-top: 110px;
@@ -1281,13 +1273,19 @@ header, main, footer, .top-header {
         position: absolute;
         z-index: 20;
         top:  20vh;
-        right: -70vw;
-        transition: all ease .6s;
         height: 60vh;
         width: 70vw;
         background-color:rgba(22, 23, 24, 0.9);
         padding: 3vh 0 3vh 0;
         border-radius: 25px 0 0 25px;
+    }
+    .burger {
+        display: flex;
+        position: absolute;
+        top:  4vh;
+        right: 10vw;
+        width: 10vw;
+        height: 4.5vh;
     }
     .top-header .main-menu > ul {
         flex-direction: column;
@@ -1320,46 +1318,13 @@ header, main, footer, .top-header {
     .black-fill {
         position: fixed;
         top:  100px;
-        right: 0vw;
-        width: 0vw;
-        height: 0%;
+        right: 0;
         background-color:rgba(22, 23, 24, .6);
-    }
-    .burger {
-        display: flex;
-        position: absolute;
-        top:  4vh;
-        right: 10vw;
-        width: 10vw;
-        height: 4.5vh;
     }
     .lang-menu {
         display: none;
     }
-    .burger-line {
-        background-color:seashell;
-        height: 4px;
-        border-radius: 5px;
-        transition: all ease .6s;
-    }
-    .opacity {
-        opacity: 0;
-        transition: all ease .6s;
-    }
-    .lineBurger1 {
-        transform: rotate(-45deg);
-        position: absolute;
-        top: 15px;
-        width: 10vw;
-        transition: all ease .6s;
-    }
-    .lineBurger4 {
-        transform: rotate(45deg);
-        position: absolute;
-        width: 10vw;
-        top: 15px;
-        transition: all ease .6s;
-    }
+    
     .title-second-header {
         letter-spacing: 9px;
         font-size: 10vw;

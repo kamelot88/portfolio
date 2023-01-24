@@ -1,0 +1,55 @@
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.burger-menu-of {
+    right: -70vw;
+    transition: all ease .6s;
+}
+.burger-menu-on {
+    right: 0vw;
+    transition: all ease .6s;
+}
+.opacity-line {
+    opacity: 0;
+    transition: all ease .6s;
+}
+.line-rotate-agin {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 15px;
+    width: 10vw;
+    box-shadow: white 0px 0px 1px 1px;
+    transition: all ease .6s;
+}
+.line-rotate-per {
+    transform: rotate(45deg);
+    position: absolute;
+    width: 10vw;
+    top: 15px;
+    box-shadow: white 0px 0px 1px 1px;
+    transition: all ease .6s;
+}
+.add-blockFill {
+    width: 100vw;
+    height: 100%;
+}
+.remove-blockFill {
+    width: 0vw;
+    height: 0%;
+    /* animation: showBlock 1s linear forwards; */
+}
+.showBlock {
+    animation-name: showBlock;
+    animation-duration: .5s;
+}
+@keyframes showBlock {
+     0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

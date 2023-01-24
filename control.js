@@ -89,75 +89,70 @@ function myProgres(num) {
 //     skillProgres1.textContent = points[j]; //This prints the values that you stored in the array
 //         }
 
+//! Burger-menu
+const mainMenu = document.querySelector('.main-menu'),
+      btnBurger = document.querySelector('.burger'),
+      blackFill = document.querySelector('.black-fill'),
+      btnMainMenu = document.querySelectorAll('.btn-hover'),
+      burgerLine = document.querySelectorAll('.burger-line');
 
-
-
-
-//! Бургер меню
-var burgerLine = document.getElementsByClassName('burger-line');
-var blackFill = document.querySelector('.black-fill');
-var btnBurger = document.querySelector('.burger');
-var mainMenu = document.querySelector('.main-menu');
-var lineBurger1 = document.querySelector('.burger-line:nth-child(1)');
-var lineBurger2 = document.querySelector('.burger-line:nth-child(2)');
-var lineBurger3 = document.querySelector('.burger-line:nth-child(3)');
-var lineBurger4 = document.querySelector('.burger-line:nth-child(4)');
-
-btnBurger.onclick = function() {
-    // console.log(mainMenu.style.right);
-    if(mainMenu.style.right != 0 + "vw") {
-        mainMenu.style.right = 0 + "vw";
-        blackFill.style.width = 100 + "vw";
-        blackFill.style.height = 100 + "%";
-        lineBurger2.classList.add('opacity');
-        lineBurger3.classList.add('opacity');
-        lineBurger1.classList.add('lineBurger1');
-        lineBurger4.classList.add('lineBurger4');
-        // burgerLine.style.boxShadow = "0px 0px 1px 1px white";
-        for(let elem of burgerLine) {
-            elem.style.boxShadow = "0px 0px 1px 1px white";
-        }
-    } else {
-        mainMenu.style.right = -70 + "vw";
-        blackFill.style.width = 0 + "vw";
-        blackFill.style.height = 0 + "%";
-        lineBurger2.classList.remove('opacity');
-        lineBurger3.classList.remove('opacity');
-        lineBurger1.classList.remove('lineBurger1');
-        lineBurger4.classList.remove('lineBurger4');
-        for(let elem of burgerLine) {
-            elem.style.boxShadow = 'none';
-        }
-    }
-};
-
-blackFill.onclick = function() {
-    mainMenu.style.right = -70 + "vw";
-    blackFill.style.width = 0 + "vw";
-    blackFill.style.height = 0 + "%";
-    lineBurger2.classList.remove('opacity');
-    lineBurger3.classList.remove('opacity');
-    lineBurger1.classList.remove('lineBurger1');
-    lineBurger4.classList.remove('lineBurger4');
-    for(let elem of burgerLine) {
-        elem.style.boxShadow = 'none';
-    }
-};
-const collectionNavMenu = document.querySelectorAll('.main-menu > ul > li');
-for (let elem of collectionNavMenu) {
-    elem.onclick = function() {
-        mainMenu.style.right = -70 + "vw";
-        blackFill.style.width = 0 + "vw";
-        blackFill.style.height = 0 + "%";
-        lineBurger2.classList.remove('opacity');
-        lineBurger3.classList.remove('opacity');
-        lineBurger1.classList.remove('lineBurger1');
-        lineBurger4.classList.remove('lineBurger4');
-        for(let elem of burgerLine) {
-            elem.style.boxShadow = 'none';
-        }
-    };
+function hideBurgerMenu() {
+    mainMenu.classList.add('burger-menu-of');
+    mainMenu.classList.remove('burger-menu-on');
 }
+hideBurgerMenu();
+
+function hideBurgerLine() {
+    burgerLine.forEach((line) => {
+        line.classList.remove('opacity-line');
+        line.classList.remove('line-rotate-agin');
+        line.classList.remove('line-rotate-per');
+    });
+}
+
+btnBurger.addEventListener('click', (event) => {
+    if (mainMenu.classList.contains('burger-menu-of')) {
+        mainMenu.classList.add('burger-menu-on');
+        mainMenu.classList.remove('burger-menu-of');
+        blackFill.classList.add('add-blockFill', 'showBlock');
+        blackFill.classList.remove('remove-blockFill');
+        burgerLine.forEach((line, i) => {
+            if (i == 0 || i == 3) {
+                line.classList.add('opacity-line');
+            } else if (i == 1) {
+                line.classList.add('line-rotate-agin');
+            } else if (i == 2) {
+                line.classList.add('line-rotate-per');
+            }
+        });
+    } else {
+        mainMenu.classList.add('burger-menu-of');
+        mainMenu.classList.remove('burger-menu-on');
+        blackFill.classList.remove('add-blockFill', 'showBlock');
+        blackFill.classList.add('remove-blockFill');
+        hideBurgerLine();
+    }
+});
+blackFill.addEventListener('click', (event) => {
+        mainMenu.classList.add('burger-menu-of');
+        mainMenu.classList.remove('burger-menu-on');
+        blackFill.classList.remove('add-blockFill', 'showBlock');
+        blackFill.classList.add('remove-blockFill');
+        hideBurgerLine();
+});
+
+mainMenu.addEventListener('click', (event) => {
+    const target = event.target;
+    btnMainMenu.forEach((item) => {
+        if (item === target) {
+            mainMenu.classList.add('burger-menu-of');
+            mainMenu.classList.remove('burger-menu-on');
+            blackFill.classList.remove('add-blockFill', 'showBlock');
+            blackFill.classList.add('remove-blockFill');
+            hideBurgerLine();
+        }
+    });
+});
 
 
 //! Сортировка портфолио
@@ -275,13 +270,13 @@ function showBlock() {
 for (let elem of collectionLang) {
     elem.onclick = function() {
         languanMenu.classList.toggle('b-show');
-    }
+    };
 }
 // 
 
 // implementation of the language switch.
 
-var languageUk = document.getElementsByClassName('uk');;
+var languageUk = document.getElementsByClassName('uk');
 var languagePl = document.getElementsByClassName('pl');
 var languageEn = document.getElementsByClassName('en');
 var languageRu = document.getElementsByClassName('ru');
@@ -314,7 +309,7 @@ flagUa.onclick = function() {
     for (let elem of languageRu) {
         elem.classList.add('display-none');
     }
-}
+};
 flagPl.onclick = function() {
     for (let elem of languageUk) {
         elem.classList.add('display-none');
@@ -328,7 +323,7 @@ flagPl.onclick = function() {
     for (let elem of languageRu) {
         elem.classList.add('display-none');
     }
-}
+};
 flagEn.onclick = function() {
     for (let elem of languageUk) {
         elem.classList.add('display-none');
@@ -342,7 +337,7 @@ flagEn.onclick = function() {
     for (let elem of languageRu) {
         elem.classList.add('display-none');
     }
-}
+};
 flagRu.onclick = function() {
     for (let elem of languageUk) {
         elem.classList.add('display-none');
