@@ -43,7 +43,7 @@
 // }
 
 
-//! Скрол блока About
+//! scroll block About
 var lol;
 window.onscroll = function() {
     if (window.pageYOffset > 600) {
@@ -154,7 +154,6 @@ mainMenu.addEventListener('click', (event) => {
     });
 });
 
-
 //! Сортировка портфолио
 const clickAll = document.querySelector('.navigation-filter > nav > ul > li:nth-child(1)');
 const clickLanding = document.querySelector('.navigation-filter > nav > ul > li:nth-child(2)');
@@ -163,7 +162,6 @@ const clickWebApl = document.querySelector('.navigation-filter > nav > ul > li:n
 const clickAnimation = document.querySelector('.navigation-filter > nav > ul > li:nth-child(5)');
 const collektionPortfolio = document.querySelectorAll('.collection-projeckt > a');
 const collectionFilterClick = document.querySelectorAll('.navigation-filter > nav > ul > li');
-
 
 clickAll.onclick = function() {
     for (let elem of collektionPortfolio) {
@@ -228,131 +226,131 @@ clickAnimation.onclick = function() {
     clickAnimation.classList.add('activ-filter');
 };
 
-//! Замена фонового изображения bottom-header для мобильной версии
-
-if (document.documentElement.clientWidth <= 500) {
-    document.querySelector(".bottom-header").style.backgroundImage = 'url(./assets/Font-header-mobile.JPG)';
-    document.querySelector(".center-photo > img").src = "./assets/myPhoto-mobile.jpg";
+//! Replacing background image of bottom-header on mobile
+function monitorScreen() {
+    if (document.documentElement.clientWidth <= 500) {
+        document.querySelector(".bottom-header").style.backgroundImage = 'url(./assets/Font-header-mobile.JPG)';
+        document.querySelector(".center-photo > img").src = "./assets/myPhoto-mobile.jpg";
+    }
 }
+monitorScreen();
+window.addEventListener('resize', function() {
+    monitorScreen();
+  });
 
-
+//! Link of CV
 const btnCV = document.querySelector("#btn-header");
-
 btnCV.onclick = function() {
     document.location.href = "https://kamelot88.github.io/rsschool-cv/cv";
 };
 
-//! Languan-menu
+//! Show languan-menu
+const clickLang = document.querySelector(".lang-menu"),
+      languanMenu = document.querySelectorAll('.flag ');
 
-var clickLang = document.querySelector(".lang-menu");
-var languanMenu = document.querySelector('.nav-lang-menu');
-var languanMenu = document.querySelector('.nav-lang-menu');
-
-// clickLang.onclick = function() {
-//         languanMenu.classList.toggle('display-opaciti');
-// }
-
-// var collectionLang = document.querySelectorAll('.nav-lang-menu > ul > li');
-
-// for (let elem of collectionLang) {
-//     elem.onclick = function() {
-//         languanMenu.classList.toggle('display-opaciti');
-//     }
-// }
-
-function showBlock() {
-    languanMenu.classList.toggle('b-show');
-  }
-  clickLang.addEventListener('click', showBlock);
-
-  var collectionLang = document.querySelectorAll('.nav-lang-menu > ul > li');
-  
-for (let elem of collectionLang) {
-    elem.onclick = function() {
-        languanMenu.classList.toggle('b-show');
-    };
-}
-// 
-
-// implementation of the language switch.
-
-var languageUk = document.getElementsByClassName('uk');
-var languagePl = document.getElementsByClassName('pl');
-var languageEn = document.getElementsByClassName('en');
-var languageRu = document.getElementsByClassName('ru');
-
-var flagUa = document.querySelector('.flag-ua');
-var flagPl = document.querySelector('.flag-pl');
-var flagEn = document.querySelector('.flag-en');
-var flagRu = document.querySelector('.flag-ru');
-
-for (let elem of languagePl) {
-    elem.classList.add('display-none');
-}
-for (let elem of languageEn) {
-    elem.classList.add('display-none');
-}
-for (let elem of languageRu) {
-    elem.classList.add('display-none');
-}
-
-flagUa.onclick = function() {
-    for (let elem of languageUk) {
-        elem.classList.remove('display-none');
+      function hideLangContent() {
+        languanMenu.forEach(item => {
+            item.classList.add('hide');
+            item.classList.remove('show', 'fade');
+        });
     }
+    hideLangContent();
+
+    clickLang.addEventListener('click', () => {
+        languanMenu.forEach(item => {
+            if (item.classList.contains('hide')) {
+                item.classList.remove('hide', 'fade');
+                item.classList.add('show', 'fade');
+            } else {
+                item.classList.add('hide', 'fade');
+                item.classList.remove('show', 'fade');
+            }
+        });
+});
+
+//! implementation of the language switch.
+const languageUk = document.querySelectorAll('.uk'),
+      languagePl = document.querySelectorAll('.pl'),
+      languageEn = document.querySelectorAll('.en'),
+      languageRu = document.querySelectorAll('.ru'),
+      flagMenu = document.querySelector('.nav-lang-menu>ul'),
+      allElemLang = document.querySelectorAll('.uk', '.pl', '.en', '.ru'),
+      flagUa = document.querySelector('.flag-ua'),
+      flagPl = document.querySelector('.flag-pl'),
+      flagEn = document.querySelector('.flag-en'),
+      flagRu = document.querySelector('.flag-ru');
+
+function hidePlLang() {
     for (let elem of languagePl) {
         elem.classList.add('display-none');
     }
+}
+function hideEnLang() {
     for (let elem of languageEn) {
         elem.classList.add('display-none');
     }
+}
+function hideRuLang() {
     for (let elem of languageRu) {
         elem.classList.add('display-none');
     }
-};
-flagPl.onclick = function() {
+}
+function hideUaLang() {
     for (let elem of languageUk) {
         elem.classList.add('display-none');
     }
+}
+function showPlLang() {
     for (let elem of languagePl) {
         elem.classList.remove('display-none');
     }
+}
+function showEnLang() {
     for (let elem of languageEn) {
-        elem.classList.add('display-none');
+        elem.classList.remove('display-none');
     }
+}
+function showRuLang() {
     for (let elem of languageRu) {
-        elem.classList.add('display-none');
+        elem.classList.remove('display-none');
     }
-};
-flagEn.onclick = function() {
+}
+function showUaLang() {
     for (let elem of languageUk) {
-        elem.classList.add('display-none');
-    }
-    for (let elem of languagePl) {
-        elem.classList.add('display-none');
-    }
-    for (let elem of languageEn) {
         elem.classList.remove('display-none');
     }
-    for (let elem of languageRu) {
-        elem.classList.add('display-none');
+}
+
+hidePlLang();
+hideEnLang();
+hideRuLang();
+
+flagMenu.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target && target.matches('.flag-ua')) {
+        showUaLang();
+        hidePlLang();
+        hideEnLang();
+        hideRuLang();
+    } else if (target.matches('.flag-en')) {
+        showEnLang();
+        hidePlLang();
+        hideUaLang();
+        hideRuLang();
+    } else if (target.matches('.flag-pl')) {
+        showPlLang();
+        hideEnLang();
+        hideUaLang();
+        hideRuLang();    
+    } else if (target.matches('.flag-ru')) {
+        showRuLang();
+        hideEnLang();
+        hideUaLang();
+        hidePlLang(); 
     }
-};
-flagRu.onclick = function() {
-    for (let elem of languageUk) {
-        elem.classList.add('display-none');
-    }
-    for (let elem of languagePl) {
-        elem.classList.add('display-none');
-    }
-    for (let elem of languageEn) {
-        elem.classList.add('display-none');
-    }
-    for (let elem of languageRu) {
-        elem.classList.remove('display-none');
-    }
-};
+});
 
 
+//! Dynamic date script
 let dataYers = document.querySelector(".content-footer > span");
 dataYers.textContent = new Date().getFullYear();

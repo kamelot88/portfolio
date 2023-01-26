@@ -37,7 +37,7 @@ header {
     background-color: rgba(21, 38, 62, 0.9);
 }
 .lang-menu {
-    width: 2vw;
+    width: 3vw;
     cursor: pointer;
 }
 .nav-lang-menu img {
@@ -59,9 +59,6 @@ header {
     -o-transform: scale(1.2,1.2);
     -ms-transform: scale(1.2,1.2);
     transform: scale(1.2,1.2);
-}
-.nav-lang-menu {
-    display: none;
 }
 .top-header .main-menu {
     width: 100%;
@@ -1430,11 +1427,25 @@ header, main, footer, .top-header {
     #experience {
         padding: 70px 0 30px 0;
     }
+    footer > .wrap {
+        height: 10vh;
+    }
+    footer > .wrap > img {
+        width: 30vw;
+        margin: 0 auto;
+    }
     .logo-foot > img {
         width: 12vw;
     }
+    .logo-foot {
+        margin: 0 auto;
+    }
     .content-footer {
         font-size: 14px;
+        margin: 0 auto;
+    }
+    .social {
+        margin: 0 auto;
     }
     .social img {
         width: 6vw;

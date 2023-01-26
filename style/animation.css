@@ -16,6 +16,15 @@
     opacity: 0;
     transition: all ease .6s;
 }
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes 
+    fade {
+        from{opacity: 0.1;}
+        to{opacity: 1;}
+    }
 .line-rotate-agin {
     transform: rotate(-45deg);
     position: absolute;
@@ -51,5 +60,49 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+
+.flag-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px auto;
+    box-shadow: inset 0 0 0 2px #1B5E20; 
+}
+.flag-active::before,
+.flag-active::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    z-index: -1;
+    margin: -5%;
+    box-shadow: inset 0 0 0 6px #EF6C00;
+    animation: anim-flag 8s linear infinite;
+}
+.flag-active::before {
+    animation-delay: -4s;
+}
+.flag-active:hover::after,
+.flag-active:hover::before {
+    background-color: #EF6C00;
+}
+@keyframes anim-flag {
+    0%, 100% {
+        clip: rect(0px, 220px, 6px, 0px);
+    }
+    25% {
+        clip: rect(0px, 6px, 220px, 0px);
+    }
+    50% {
+        clip: rect(218px, 220px, 220px, 0px);
+    }
+    75% {
+        clip: rect(0px, 220px, 220px, 218px);
     }
 }
