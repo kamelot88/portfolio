@@ -43,6 +43,9 @@ header {
 .nav-lang-menu img {
     width: 2vw;
 }
+.flag {
+    display: none;
+}
 .nav-lang-menu {
     position: absolute;
     z-index: 20;
@@ -1321,7 +1324,9 @@ header, main, footer, .top-header {
     .lang-menu {
         display: none;
     }
-    
+    .flag {
+        display: block;
+    }
     .title-second-header {
         letter-spacing: 9px;
         font-size: 10vw;

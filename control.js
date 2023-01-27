@@ -44,50 +44,66 @@
 
 
 //! scroll block About
-var lol;
-window.onscroll = function() {
-    if (window.pageYOffset > 600) {
-        for (let elem of document.getElementsByClassName('skill-rise')) {
-            elem.style.width = 100 + '%';
-            skillProgres1.textContent = elem.style.width;
-        }
-        // myProgres(100);
-    } else {
-        for (let elem of document.getElementsByClassName('skill-rise')) {
-            elem.style.width = 1 + '%';
+const skillRise = document.querySelectorAll('.skill-rise'),
+      skillValue = document.querySelector('.title-skill>span');
+    //   document.querySelector(".title-skill > span")
+      const array = document.querySelector(document.querySelector(".right-block-wrap > img"));
+function animationSkill() {
+    let value = 1;
+    let id = setInterval(frame, 5);
+    function frame() {
+        if (value === 100) {
+            clearInterval(id);
+        } else {
+            value++;
+            skillRise.forEach((elem) => {
+                elem.style.width = value + "%";
+            });
         }
     }
-};
+}
+
+addEventListener("scroll", (event) => {
+    if (window.pageYOffset > 600) {
+        animationSkill();
+    }
+});
+
+
+
+// window.onscroll = function() {
+//     if (window.pageYOffset > 600) {
+        
+//     }
+// };
+
 
 //! Функция анимиривания увеличения числа
-const skillProgres1 = document.querySelector(".right-block > div:nth-child(1) > div.title-skill > span");
-const skillProgres2 = document.querySelector(".right-block > div:nth-child(2) > div.title-skill > span");
-const skillProgres3 = document.querySelector(".right-block > div:nth-child(3) > div.title-skill > span");
-const skillProgres4 = document.querySelector(".right-block > div:nth-child(4) > div.title-skill > span");
-const skillProgres5 = document.querySelector(".right-block > div:nth-child(5) > div.title-skill > span");
+// const skillProgres1 = document.querySelector(".right-block > div:nth-child(1) > div.title-skill > span");
+// const skillProgres2 = document.querySelector(".right-block > div:nth-child(2) > div.title-skill > span");
+// const skillProgres3 = document.querySelector(".right-block > div:nth-child(3) > div.title-skill > span");
+// const skillProgres4 = document.querySelector(".right-block > div:nth-child(4) > div.title-skill > span");
+// const skillProgres5 = document.querySelector(".right-block > div:nth-child(5) > div.title-skill > span");
 
-const time = 4000; // ms
-const step = 1;
+// const time = 4000; // ms
+// const step = 1;
 
-function myProgres(num) {
-    let n = 0;
-    let t = Math.round(time / (num / step));
-    let interval = setInterval(() => {
-        n = n + step;
-        if (n == num) {
-            clearInterval(interval);
-        }
-        skillProgres1.innerHTML = n;
-        skillProgres2.innerHTML = n;
-        skillProgres3.innerHTML = n;
-        skillProgres4.innerHTML = n;
-        skillProgres5.innerHTML = n;
-    },
-        t);
-}
-// function myProgresTop() {
-//     skillProgres1.textContent = points[j]; //This prints the values that you stored in the array
+// function myProgres(num) {
+//     let n = 0;
+//     let t = Math.round(time / (num / step));
+//     let interval = setInterval(() => {
+//         n = n + step;
+//         if (n == num) {
+//             clearInterval(interval);
 //         }
+//         skillProgres1.innerHTML = n;
+//         skillProgres2.innerHTML = n;
+//         skillProgres3.innerHTML = n;
+//         skillProgres4.innerHTML = n;
+//         skillProgres5.innerHTML = n;
+//     },
+//         t);
+// }
 
 //! Burger-menu
 const mainMenu = document.querySelector('.main-menu'),
@@ -248,22 +264,14 @@ btnCV.onclick = function() {
 const clickLang = document.querySelector(".lang-menu"),
       languanMenu = document.querySelectorAll('.flag ');
 
-      function hideLangContent() {
-        languanMenu.forEach(item => {
-            item.classList.add('hide');
-            item.classList.remove('show', 'fade');
-        });
-    }
-    hideLangContent();
-
     clickLang.addEventListener('click', () => {
         languanMenu.forEach(item => {
-            if (item.classList.contains('hide')) {
-                item.classList.remove('hide', 'fade');
-                item.classList.add('show', 'fade');
+            if (item.style.display === 'block') {
+                item.style.display = 'none';
+                item.classList.remove('fade');
             } else {
-                item.classList.add('hide', 'fade');
-                item.classList.remove('show', 'fade');
+                item.style.display = 'block';
+                item.classList.add('fade');
             }
         });
 });
