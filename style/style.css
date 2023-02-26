@@ -40,6 +40,12 @@ header {
     width: 3vw;
     cursor: pointer;
 }
+.color-fon {
+    width: 75px;
+}
+.color-fon > svg {
+    width: 25px;
+}
 .nav-lang-menu img {
     width: 2vw;
 }
